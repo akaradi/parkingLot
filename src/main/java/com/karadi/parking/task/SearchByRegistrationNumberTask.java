@@ -9,7 +9,7 @@ public class SearchByRegistrationNumberTask extends Task {
 
 	@Override
 	public ParkingLot execute(String command, String[] args, ParkingLot parkingLot) {
-		List<Integer> result = parkingLot.getSlots().values().stream()
+		List<Integer> result = parkingLot.getSlots().stream()
 				.filter(slot -> slot.getVehicleNumber().equalsIgnoreCase(args[0])).map(slot -> slot.getSlotNumber())
 				.collect(Collectors.toList());
 		if (result.size() > 0) {

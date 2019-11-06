@@ -6,6 +6,8 @@ public abstract class Slot {
 	private String vehicleNumber;
 	private String color;
 	private Integer size;
+	private String slotType;
+	private boolean occupied;
 
 	public String getVehicleNumber() {
 		return vehicleNumber;
@@ -36,6 +38,7 @@ public abstract class Slot {
 		this.slotNumber = slotNumber;
 		this.vehicleNumber = vehicleNumber;
 		this.color = color;
+		this.occupied = false;
 	}
 
 	@Override
@@ -83,9 +86,27 @@ public abstract class Slot {
 		this.size = size;
 	}
 
+	public String getSlotType() {
+
+		return this.slotType;
+	}
+
+	protected void setSlotType(String slotType) {
+		this.slotType = slotType;
+	}
+
+	public boolean isOccupied() {
+		return occupied;
+	}
+
+	public void setOccupied(boolean occupied) {
+		this.occupied = occupied;
+	}
+
 	@Override
 	public String toString() {
-		return "Slot [slotNumber=" + slotNumber + ", vehicleNumber=" + vehicleNumber + ", color=" + color + "]";
+		return "Slot [slotNumber=" + slotNumber + ", vehicleNumber=" + vehicleNumber + ", color=" + color + ", size="
+				+ size + ", slotType=" + slotType + ", occupied=" + occupied + "]";
 	}
 
 }

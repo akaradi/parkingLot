@@ -1,6 +1,6 @@
 package com.karadi.parking.task;
 
-import java.util.Map;
+import java.util.Set;
 
 import com.karadi.parking.model.ParkingLot;
 import com.karadi.parking.model.Slot;
@@ -10,12 +10,11 @@ public class LeaveTask extends Task {
 	@Override
 	public ParkingLot execute(String command, String[] args, ParkingLot parkingLot) {
 		Integer slotNumber = Integer.parseInt(args[0]);
-		Map<Integer, Slot> slots = parkingLot.getSlots();
-		if (slots.size() < slotNumber || !slots.containsKey(slotNumber)) {
-			System.out.println(slotNumber + " is not allocated!!");
-			return parkingLot;
-		}
-		parkingLot.getSlots().put(slotNumber, null);
+		Set<Slot> slots = parkingLot.getSlots();
+		Slot slot = slots.stream().filter(slo -> slo.getSlotNumber().equals(slotNumber)).findAny()
+				.orElseThrow(() -> new RuntimeException(slotNumber + " is not allocated!!"));
+		slot.setColor(null);
+		slot.setOccupied(false);
 		System.out.println("Slot Number " + slotNumber + " is free");
 		return parkingLot;
 	}

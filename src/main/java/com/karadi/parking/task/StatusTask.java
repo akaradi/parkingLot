@@ -6,7 +6,7 @@ public class StatusTask extends Task {
 
 	@Override
 	public ParkingLot execute(String command, String[] args, ParkingLot parkingLot) {
-		System.out.println(parkingLot);
+		parkingLot.getSlots().stream().filter(slot -> slot.isOccupied()).forEach(System.out::println);
 		return parkingLot;
 	}
 

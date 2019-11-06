@@ -25,7 +25,7 @@ public class SearchByColourTask extends Task {
 	@Override
 	public ParkingLot execute(String command, String[] args, ParkingLot parkingLot) {
 
-		List<Object> result = parkingLot.getSlots().values().stream()
+		List<Object> result = parkingLot.getSlots().stream()
 				.filter(slot -> slot.getColor().equalsIgnoreCase(args[0])).map(mapOfFunction.get(command.toUpperCase()))
 				.collect(Collectors.toList());
 		if (result.size() > 0) {

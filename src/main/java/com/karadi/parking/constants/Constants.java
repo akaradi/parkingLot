@@ -14,10 +14,8 @@ public class Constants {
 
 	}
 
-	public static class VehicleSize {
-		public static final Integer CAR_SIZE = 4;
-		public static final Integer SUV_SIZE = 5;
-		public static final Integer BUS_SIZE = 8;
-		public static final Integer HEAVY_TRANSPORT_SIZE = 10;
+	public static class VehicleType {
+		public static final String CAR_TYPE = "car";
+		public static final String HEAVY_TRANSPORT_TYPE = "hv";
 	}
 }

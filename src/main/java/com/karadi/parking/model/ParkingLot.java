@@ -1,16 +1,16 @@
 package com.karadi.parking.model;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class ParkingLot {
 
 	private Integer size;
-	private Map<Integer, Slot> slots;
+	private Set<Slot> slots;
 
 	public ParkingLot(Integer size) {
 		this.size = size;
-		this.slots = new LinkedHashMap<Integer, Slot>(size);
+		this.slots = new LinkedHashSet<Slot>(size);
 	}
 
 	public Integer getSize() {
@@ -21,11 +21,11 @@ public class ParkingLot {
 		this.size = size;
 	}
 
-	public Map<Integer, Slot> getSlots() {
+	public Set<Slot> getSlots() {
 		return slots;
 	}
 
-	public void setSlots(Map<Integer, Slot> slots) {
+	public void setSlots(Set<Slot> slots) {
 		this.slots = slots;
 	}
 

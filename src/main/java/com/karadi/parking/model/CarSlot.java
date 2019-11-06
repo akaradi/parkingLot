@@ -6,7 +6,7 @@ public class CarSlot extends Slot {
 
 	public CarSlot(Integer slotNumber, String carNumber, String color) {
 		super(slotNumber, carNumber, color);
-		setSize(Constants.VehicleSize.CAR_SIZE);
+		setSlotType(Constants.VehicleType.CAR_TYPE);
 	}
 
 }
